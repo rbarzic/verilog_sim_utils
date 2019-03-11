@@ -1,3 +1,15 @@
+// A generic SPI slave that support the four possible combinations
+// for CPHA & CPOL
+// It uses c2v values to get data and configuration from the verification
+// program
+// `TB.c2v_value[27] : select the CPHA/CPOL configuration
+// `TB.c2v_value[28] : data to send back when CPOL=0, CPHA=0
+// `TB.c2v_value[29] : data to send back when CPOL=1, CPHA=0
+// `TB.c2v_value[30] : data to send back when CPOL=0, CPHA=1
+// `TB.c2v_value[31] : data to send back when CPOL=1, CPHA=1
+
+
+
 module sim_spi_slave (/*AUTOARG*/
    // Outputs
    data_cpol_0_cpha_0, data_cpol_1_cpha_0, data_cpol_0_cpha_1,
